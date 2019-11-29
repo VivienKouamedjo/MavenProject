@@ -1,10 +1,12 @@
 package com.zoo;
 
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
-public class Secteur{
+public class Secteur {
 	String typeAnimauxDansSecteur;
-	List<Animal> animauxDansSecteur;
+	List<Animal> animauxDansSecteur = new ArrayList<Animal>();
 	
 	public Secteur(String TypAn) {
 		this.typeAnimauxDansSecteur = TypAn;
@@ -21,6 +23,19 @@ public class Secteur{
 	public String obtenirType() {
 		return typeAnimauxDansSecteur;
 	}
+
+	Comparator<Secteur> SectComparator = new Comparator<Secteur>() {
+		
+		public int compare(Secteur o1, Secteur o2) {
+			// TODO Auto-generated method stub
+			return o1.getNombreAnimaux() - o2.getNombreAnimaux();
+		}
+	};
+	
+	
+
+	
+	
 	
 	
 }
